@@ -22,6 +22,12 @@ Route::get('/user', function () {
 })->name('user');
 
 Route::get('/home', function () {
-    return view('user');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/class', function () {
+    return view('class');
+})->name('class');
+
+
 
