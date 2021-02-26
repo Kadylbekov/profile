@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +31,19 @@ Route::get('/home', function () {
 Route::get('/class', function () {
     return view('class');
 })->name('class');
+
+Route::get('post/create', function () {
+    DB::table('posts')->insert([
+        'title' => 'Nurbolat Kadylbekov',
+        'body' => "lab4",
+    ]);
+});
+
+Route::get('/post', function () {
+    $post = Post::find(1);
+    return $post;
+});
+
 
 
 
